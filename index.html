@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diadem Technologies Kenya — Innovate · Secure · Transform</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --blue-dark: #1A3A6B;
+  --blue:      #2563C8;
+  --blue-light:#4A90D9;
+  --sky:       #E8F4FD;
+  --white:     #FFFFFF;
+  --off-white: #F7FAFD;
+  --gray:      #64748B;
+  --gray-light:#E2EAF4;
+  --text:      #1E293B;
+  --orange:    #F97316;
+  --green:     #16A34A;
+}
+
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;}
+
+/* ── NAVBAR ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--gray-light);
+  padding:0 5%;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo-wrap{display:flex;align-items:center;gap:10px;}
+.logo-svg{width:52px;height:52px;}
+.logo-text{display:flex;flex-direction:column;line-height:1.1;}
+.logo-text strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--blue-dark);letter-spacing:0.05em;}
+.logo-text span{font-size:9px;color:var(--blue);letter-spacing:0.18em;font-weight:600;text-transform:uppercase;}
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links a{
+  padding:8px 18px;font-size:13px;font-weight:500;color:var(--gray);
+  text-decoration:none;border-radius:6px;transition:all 0.2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--sky);}
+.nav-cta{
+  background:var(--blue);color:var(--white);
+  border:none;padding:10px 22px;border-radius:8px;
+  font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:background 0.2s;text-decoration:none;display:inline-block;
+}
+.nav-cta:hover{background:var(--blue-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:24px;height:2px;background:var(--blue-dark);border-radius:2px;transition:all 0.3s;}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;
+  background:white;border-bottom:1px solid var(--gray-light);
+  padding:16px 5%;z-index:199;flex-direction:column;gap:4px;
+}
+.mobile-menu a{
+  display:block;padding:12px 16px;font-size:15px;font-weight:500;
+  color:var(--text);text-decoration:none;border-radius:8px;
+}
+.mobile-menu a:hover{background:var(--sky);color:var(--blue);}
+.mobile-menu.open{display:flex;}
+
+/* ── PAGES ── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 60%,var(--blue-light) 100%);
+  padding:80px 5% 70px;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;right:-80px;top:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+.hero::after{
+  content:'';position:absolute;right:60px;bottom:-60px;
+  width:250px;height:250px;border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.9);
+  font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  padding:6px 14px;border-radius:20px;margin-bottom:20px;
+}
+.signal-dot{width:7px;height:7px;background:#4ADE80;border-radius:50%;animation:pulse 1.6s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.7);}}
+.hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(32px,4.5vw,54px);font-weight:800;
+  color:white;line-height:1.08;letter-spacing:-0.02em;margin-bottom:18px;
+}
+.hero h1 em{font-style:normal;color:#7DD3FC;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.8);max-width:480px;line-height:1.7;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-white{
+  background:white;color:var(--blue-dark);
+  border:none;padding:14px 28px;border-radius:8px;
+  font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all 0.2s;text-decoration:none;display:inline-block;
+}
+.btn-white:hover{background:var(--sky);transform:translateY(-1px);}
+.btn-outline-white{
+  background:transparent;color:white;
+  border:2px solid rgba(255,255,255,0.4);padding:14px 28px;border-radius:8px;
+  font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all 0.2s;text-decoration:none;display:inline-block;
+}
+.btn-outline-white:hover{border-color:white;background:rgba(255,255,255,0.08);}
+.hero-card{
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:16px;padding:32px;
+  backdrop-filter:blur(8px);
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative;z-index:1;
+}
+.h-stat{background:rgba(255,255,255,0.1);border-radius:10px;padding:20px 16px;text-align:center;}
+.h-stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;color:white;}
+.h-stat-val span{color:#7DD3FC;}
+.h-stat-label{font-size:11px;color:rgba(255,255,255,0.7);margin-top:4px;}
+
+/* ── SIGNAL BARS (decorative) ── */
+.signal-bars{display:flex;align-items:flex-end;gap:3px;height:36px;margin-bottom:20px;}
+.bar{width:7px;background:rgba(255,255,255,0.3);border-radius:2px;animation:barrise 1.2s ease-in-out infinite alternate;}
+.bar:nth-child(1){height:30%;animation-delay:0s;}
+.bar:nth-child(2){height:55%;animation-delay:0.15s;}
+.bar:nth-child(3){height:75%;animation-delay:0.3s;}
+.bar:nth-child(4){height:100%;animation-delay:0.45s;}
+@keyframes barrise{0%{opacity:0.3;}100%{opacity:1;background:rgba(255,255,255,0.9);}}
+
+/* ── SECTIONS ── */
+.section{padding:72px 5%;}
+.section-alt{background:var(--off-white);}
+.section-blue{background:var(--blue-dark);color:white;}
+.section-tag{
+  font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:10px;
+}
+.section-tag.white{color:#7DD3FC;}
+.section-title{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(26px,3.5vw,38px);font-weight:800;
+  color:var(--text);letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px;
+}
+.section-title.white{color:white;}
+.section-sub{font-size:16px;color:var(--gray);max-width:560px;line-height:1.7;}
+.section-sub.white{color:rgba(255,255,255,0.75);}
+.section-head{margin-bottom:48px;}
+.centered{text-align:center;}
+.centered .section-sub{margin:0 auto;}
+
+/* ── SERVICES GRID ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.svc-card{
+  background:white;border:1px solid var(--gray-light);border-radius:12px;
+  padding:28px 24px;transition:all 0.25s;
+}
+.svc-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(37,99,200,0.1);transform:translateY(-3px);}
+.svc-icon{
+  width:48px;height:48px;border-radius:10px;
+  background:var(--sky);display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:16px;
+}
+.svc-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.svc-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+
+/* ── PRICING ── */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+.plan-card{
+  background:white;border:2px solid var(--gray-light);border-radius:14px;
+  padding:32px 28px;position:relative;transition:all 0.25s;
+}
+.plan-card:hover{border-color:var(--blue);box-shadow:0 12px 40px rgba(37,99,200,0.12);}
+.plan-card.featured{border-color:var(--blue);background:var(--blue);}
+.plan-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--orange);color:white;
+  font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  padding:5px 16px;border-radius:20px;white-space:nowrap;
+}
+.plan-name{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;
+  color:var(--text);margin-bottom:4px;
+}
+.plan-card.featured .plan-name{color:white;}
+.plan-speed{font-size:36px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;color:var(--blue);margin:12px 0 4px;}
+.plan-card.featured .plan-speed{color:#7DD3FC;}
+.plan-speed small{font-size:14px;font-weight:500;color:var(--gray);}
+.plan-card.featured .plan-speed small{color:rgba(255,255,255,0.7);}
+.plan-price{
+  font-size:28px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif;
+  color:var(--text);margin:16px 0;
+}
+.plan-card.featured .plan-price{color:white;}
+.plan-price small{font-size:13px;font-weight:400;color:var(--gray);}
+.plan-card.featured .plan-price small{color:rgba(255,255,255,0.6);}
+.plan-features{list-style:none;margin-bottom:24px;}
+.plan-features li{
+  font-size:13px;color:var(--gray);padding:7px 0;
+  border-bottom:1px solid var(--gray-light);
+  display:flex;align-items:center;gap:8px;
+}
+.plan-card.featured .plan-features li{color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.15);}
+.plan-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
+.plan-card.featured .plan-features li::before{color:#4ADE80;}
+.btn-plan{
+  width:100%;padding:13px;border-radius:8px;
+  font-size:14px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;
+  transition:all 0.2s;border:none;text-decoration:none;display:block;text-align:center;
+}
+.btn-plan-blue{background:var(--blue);color:white;}
+.btn-plan-blue:hover{background:var(--blue-dark);}
+.btn-plan-white{background:white;color:var(--blue-dark);}
+.btn-plan-white:hover{background:var(--sky);}
+.btn-plan-outline{background:transparent;color:var(--blue);border:2px solid var(--blue)!important;}
+.btn-plan-outline:hover{background:var(--sky);}
+
+/* ── WHY US ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;}
+.why-card{text-align:center;padding:32px 20px;}
+.why-icon{font-size:36px;margin-bottom:14px;}
+.why-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:white;margin-bottom:8px;}
+.why-desc{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;}
+
+/* ── ABOUT PAGE ── */
+.about-hero{
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+  padding:70px 5%;text-align:center;color:white;
+}
+.about-hero h1{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(30px,4vw,48px);
+  font-weight:800;color:white;margin-bottom:16px;letter-spacing:-0.02em;
+}
+.about-hero p{font-size:16px;color:rgba(255,255,255,0.8);max-width:580px;margin:0 auto;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;}
+.val-card{
+  background:white;border:1px solid var(--gray-light);border-radius:12px;
+  padding:28px 22px;text-align:center;
+}
+.val-icon{font-size:32px;margin-bottom:12px;}
+.val-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.val-desc{font-size:13px;color:var(--gray);line-height:1.6;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;}
+.team-card{
+  background:white;border:1px solid var(--gray-light);border-radius:12px;
+  padding:28px 20px;text-align:center;
+}
+.team-avatar{
+  width:70px;height:70px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;margin:0 auto 14px;
+}
+.team-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);}
+.team-role{font-size:12px;color:var(--blue);margin-top:4px;font-weight:500;}
+
+/* ── CONTACT PAGE ── */
+.contact-page{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:72px 5%;}
+.contact-info h2{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;
+  color:var(--text);margin-bottom:16px;letter-spacing:-0.02em;
+}
+.contact-info p{color:var(--gray);font-size:15px;line-height:1.7;margin-bottom:32px;}
+.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;}
+.ci-icon{
+  width:42px;height:42px;border-radius:10px;background:var(--sky);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+}
+.ci-label{font-size:11px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;}
+.ci-val{font-size:15px;font-weight:600;color:var(--text);margin-top:2px;}
+.ci-sub{font-size:12px;color:var(--gray);margin-top:2px;}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:white;
+  padding:14px 24px;border-radius:10px;
+  font-weight:700;font-size:14px;text-decoration:none;
+  transition:all 0.2s;margin-top:8px;
+}
+.wa-btn:hover{background:#128C7E;transform:translateY(-2px);}
+
+.contact-form{background:var(--off-white);border-radius:16px;padding:36px;}
+.contact-form h3{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;
+  color:var(--text);margin-bottom:24px;
+}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;padding:12px 14px;
+  border:1.5px solid var(--gray-light);border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--text);
+  background:white;outline:none;transition:border-color 0.2s;
+  -webkit-appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--blue);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.btn-submit{
+  width:100%;padding:14px;background:var(--blue);color:white;
+  border:none;border-radius:8px;font-size:14px;font-weight:700;
+  cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s;
+}
+.btn-submit:hover{background:var(--blue-dark);}
+.form-success{
+  display:none;text-align:center;padding:24px;
+  color:var(--green);font-weight:600;font-size:15px;
+}
+.form-success .check{font-size:40px;display:block;margin-bottom:10px;}
+
+/* ── COVERAGE MAP PLACEHOLDER ── */
+.coverage-section{padding:72px 5%;background:var(--off-white);}
+.map-placeholder{
+  background:white;border:2px dashed var(--gray-light);border-radius:14px;
+  padding:60px;text-align:center;margin-top:32px;
+}
+.map-placeholder p{color:var(--gray);font-size:14px;margin-top:8px;}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.testi-card{
+  background:white;border:1px solid var(--gray-light);border-radius:12px;padding:28px;
+}
+.stars{color:#F59E0B;font-size:14px;margin-bottom:12px;}
+.testi-text{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:16px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:10px;}
+.testi-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.testi-name{font-size:13px;font-weight:600;color:var(--text);}
+.testi-loc{font-size:11px;color:var(--gray);}
+
+/* ── MPESA BANNER ── */
+.mpesa-banner{
+  background:linear-gradient(135deg,#006400,#009900);
+  padding:40px 5%;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;
+}
+.mpesa-banner h3{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;
+  color:white;margin-bottom:6px;
+}
+.mpesa-banner p{color:rgba(255,255,255,0.85);font-size:14px;}
+.mpesa-badge{
+  background:white;color:#006400;
+  padding:12px 28px;border-radius:8px;
+  font-weight:800;font-size:15px;white-space:nowrap;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--blue-dark);color:rgba(255,255,255,0.8);
+  padding:48px 5% 24px;
+}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand strong{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;
+  color:white;display:block;letter-spacing:0.05em;margin-bottom:6px;
+}
+.footer-brand p{font-size:13px;line-height:1.7;max-width:240px;}
+.footer-col h4{
+  font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.5);margin-bottom:14px;
+}
+.footer-col a{
+  display:block;font-size:13px;color:rgba(255,255,255,0.7);
+  text-decoration:none;margin-bottom:8px;transition:color 0.2s;cursor:pointer;
+}
+.footer-col a:hover{color:white;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.4);}
+.tagline-small{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.15em;text-transform:uppercase;}
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;font-size:26px;
+  box-shadow:0 4px 16px rgba(37,211,102,0.4);
+  text-decoration:none;transition:transform 0.2s;
+}
+.wa-float:hover{transform:scale(1.1);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero{grid-template-columns:1fr;gap:32px;padding:52px 5% 48px;}
+  .hero-card{display:none;}
+  .contact-page{grid-template-columns:1fr;gap:32px;padding:40px 5%;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px;}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  .plans-grid{grid-template-columns:1fr;}
+  .mpesa-banner{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo-wrap">
+    <!-- Recreated SVG logo matching Diadem branding -->
+    <svg class="logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Pixelated D base -->
+      <rect x="8" y="18" width="6" height="6" fill="#3B82F6" opacity="0.5"/>
+      <rect x="2" y="24" width="6" height="6" fill="#3B82F6" opacity="0.3"/>
+      <rect x="8" y="30" width="6" height="6" fill="#3B82F6" opacity="0.4"/>
+      <rect x="2" y="36" width="6" height="6" fill="#3B82F6" opacity="0.2"/>
+      <rect x="8" y="42" width="6" height="6" fill="#3B82F6" opacity="0.3"/>
+      <!-- D shape -->
+      <path d="M16 16 L34 16 Q52 16 52 40 Q52 64 34 64 L16 64 Z" fill="#1A3A6B"/>
+      <path d="M24 26 L32 26 Q42 26 42 40 Q42 54 32 54 L24 54 Z" fill="#E8F4FD"/>
+      <!-- WiFi arcs -->
+      <path d="M34 32 Q46 24 58 32" stroke="#4A90D9" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M34 24 Q50 13 66 24" stroke="#2563C8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M34 16 Q54 2 74 16" stroke="#1A3A6B" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- Center dot -->
+      <circle cx="34" cy="40" r="4" fill="#2563C8"/>
+    </svg>
+    <div class="logo-text">
+      <strong>DIADEM</strong>
+      <span>Technologies Kenya</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('home',this)">Home</a></li>
+    <li><a href="#" onclick="showPage('pricing',this)">Pricing</a></li>
+    <li><a href="#" onclick="showPage('about',this)">About</a></li>
+    <li><a href="#" onclick="showPage('contact',this)">Contact</a></li>
+  </ul>
+  <a href="tel:0793908847" class="nav-cta">📞 0793 908 847</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showPage('home',null);toggleMenu()">🏠 Home</a>
+  <a href="#" onclick="showPage('pricing',null);toggleMenu()">💰 Pricing</a>
+  <a href="#" onclick="showPage('about',null);toggleMenu()">ℹ️ About Us</a>
+  <a href="#" onclick="showPage('contact',null);toggleMenu()">📞 Contact</a>
+  <a href="tel:0793908847" style="color:#2563C8;font-weight:700;">📞 Call: 0793 908 847</a>
+</div>
+
+<!-- ══════════ HOME PAGE ══════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div style="position:relative;z-index:1;">
+      <div class="hero-eyebrow">
+        <div class="signal-dot"></div>
+        Network Online · Juja · Thika · Nyeri
+      </div>
+      <div class="signal-bars">
+        <div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div>
+      </div>
+      <h1>Fast, Reliable<br/><em>Internet</em> for<br/>Every Home &amp; Business</h1>
+      <p class="hero-sub">Diadem Technologies Kenya delivers fiber-fast broadband, WiFi hotspot solutions, and enterprise networking — built for Kenya's growing digital economy.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-white" onclick="showPage('pricing',null)">View Our Plans</a>
+        <a href="https://wa.me/254793908847" class="btn-outline-white" target="_blank">💬 WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="h-stat"><div class="h-stat-val">50<span>Mbps+</span></div><div class="h-stat-label">Max Home Speed</div></div>
+      <div class="h-stat"><div class="h-stat-val">24<span>/7</span></div><div class="h-stat-label">Support Available</div></div>
+      <div class="h-stat"><div class="h-stat-val">99<span>%</span></div><div class="h-stat-label">Uptime Guarantee</div></div>
+      <div class="h-stat"><div class="h-stat-val">M-<span>Pesa</span></div><div class="h-stat-label">Easy Payments</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Full-Stack Connectivity Solutions</h2>
+      <p class="section-sub">From home WiFi to enterprise fiber — we design, install, and maintain networks that keep you online.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <div class="svc-name">Home Broadband</div>
+        <div class="svc-desc">Affordable residential internet packages starting from Ksh 1,500/month. Stable, fast, and zero throttling.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏢</div>
+        <div class="svc-name">Business Internet</div>
+        <div class="svc-desc">Dedicated bandwidth with SLA guarantees for SMEs and enterprises. Static IP available on request.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📡</div>
+        <div class="svc-name">WiFi Hotspot Setup</div>
+        <div class="svc-desc">Full hotspot deployment for apartments, hotels, schools, and public spaces using MikroTik equipment.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔌</div>
+        <div class="svc-name">Network Installation</div>
+        <div class="svc-desc">Structured cabling, LAN setup, fiber termination, and full network infrastructure for new buildings.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔒</div>
+        <div class="svc-name">Network Security</div>
+        <div class="svc-desc">Firewall configuration, VPN setup, and network monitoring to keep your business data secure.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🛠️</div>
+        <div class="svc-name">Maintenance &amp; Support</div>
+        <div class="svc-desc">On-call technicians for fault diagnosis, equipment repair, and preventive network maintenance.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section section-blue">
+    <div class="section-head centered">
+      <div class="section-tag white">Why Diadem</div>
+      <h2 class="section-title white">Built on Trust, Powered by Technology</h2>
+      <p class="section-sub white">We combine local expertise with enterprise-grade technology to deliver internet that just works.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Fast Installation</div>
+        <div class="why-desc">We install within 48 hours of your request — no long waiting periods.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <div class="why-title">M-Pesa Payments</div>
+        <div class="why-desc">Pay conveniently via M-Pesa. No banks, no queues — just send and you're connected.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📞</div>
+        <div class="why-title">Local Support</div>
+        <div class="why-desc">Real people, real help. Call or WhatsApp 0793 908 847 and get a response fast.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <div class="why-title">Expert Technicians</div>
+        <div class="why-desc">Certified field technicians trained in fiber optics, OTDR testing, and network troubleshooting.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="section-head centered">
+      <div class="section-tag">Customer Stories</div>
+      <h2 class="section-title">Trusted Across Kenya</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"Diadem installed our office network in one day. The connection is solid — no dropouts since we switched. Great team."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">👨‍💼</div>
+          <div><div class="testi-name">James Mwangi</div><div class="testi-loc">SME Owner, Nairobi</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"The WiFi hotspot for our apartments has been a game-changer. Tenants love it and we earn from it. Very professional setup."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">👩‍💼</div>
+          <div><div class="testi-name">Grace Njeri</div><div class="testi-loc">Property Manager, Kiambu</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <div class="testi-text">"Affordable home internet that actually works during peak hours. M-Pesa payment is so convenient. Highly recommend."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">👨‍🎓</div>
+          <div><div class="testi-name">Brian Otieno</div><div class="testi-loc">Student, Nairobi</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MPESA BANNER -->
+  <div class="mpesa-banner">
+    <div>
+      <h3>💚 Pay with M-Pesa — It's That Simple</h3>
+      <p>Renew your package, pay for installation, or top up your account instantly from your phone.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <section class="section" style="text-align:center;padding:72px 5%;">
+    <div class="section-tag" style="justify-content:center;display:flex;">Get Started Today</div>
+    <h2 class="section-title" style="max-width:500px;margin:0 auto 16px;">Ready to get connected?</h2>
+    <p style="color:var(--gray);font-size:15px;max-width:440px;margin:0 auto 32px;">Request an installation today. Our team will survey your location and have you online in no time.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="#" class="nav-cta" onclick="showPage('contact',null)" style="font-size:15px;padding:14px 32px;">Request Installation</a>
+      <a href="https://wa.me/254793908847" target="_blank" class="wa-btn">💬 WhatsApp: 0793 908 847</a>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ══════════ PRICING PAGE ══════════ -->
+<div id="page-pricing" class="page">
+  <section style="background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:64px 5%;text-align:center;color:white;">
+    <div class="section-tag white" style="justify-content:center;display:flex;">Transparent Pricing</div>
+    <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:white;margin:10px 0 14px;letter-spacing:-0.02em;">Simple Plans, No Hidden Fees</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:15px;max-width:500px;margin:0 auto;">All plans include free installation survey, M-Pesa billing, and 24/7 support via WhatsApp.</p>
+  </section>
+
+  <!-- HOME PLANS -->
+  <section class="section">
+    <div class="section-head centered">
+      <div class="section-tag">Residential</div>
+      <h2 class="section-title">Home Internet Plans</h2>
+      <p class="section-sub" style="margin:0 auto;">Perfect for households, students, and home offices.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Basic</div>
+        <div class="plan-speed">10<small> Mbps</small></div>
+        <div class="plan-price">Ksh 1,500<small>/month</small></div>
+        <ul class="plan-features">
+          <li>Up to 10 Mbps download</li>
+          <li>Unlimited data</li>
+          <li>1 device optimized</li>
+          <li>M-Pesa billing</li>
+          <li>Email support</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I'd like the Basic Home Plan" class="btn-plan btn-plan-outline" target="_blank">Get Started</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Standard</div>
+        <div class="plan-speed">25<small> Mbps</small></div>
+        <div class="plan-price">Ksh 2,500<small>/month</small></div>
+        <ul class="plan-features">
+          <li>Up to 25 Mbps download</li>
+          <li>Unlimited data</li>
+          <li>Up to 5 devices</li>
+          <li>M-Pesa billing</li>
+          <li>WhatsApp support</li>
+          <li>Free router setup</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I'd like the Standard Home Plan" class="btn-plan btn-plan-white" target="_blank">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-speed">50<small> Mbps</small></div>
+        <div class="plan-price">Ksh 3,999<small>/month</small></div>
+        <ul class="plan-features">
+          <li>Up to 50 Mbps download</li>
+          <li>Unlimited data</li>
+          <li>Unlimited devices</li>
+          <li>M-Pesa billing</li>
+          <li>Priority support</li>
+          <li>Free router + installation</li>
+          <li>Static IP available</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I'd like the Premium Home Plan" class="btn-plan btn-plan-blue" target="_blank">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS PLANS -->
+  <section class="section section-alt">
+    <div class="section-head centered">
+      <div class="section-tag">Business</div>
+      <h2 class="section-title">Business &amp; Enterprise Plans</h2>
+      <p class="section-sub" style="margin:0 auto;">Dedicated connections built for uptime, reliability, and growth.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">SME</div>
+        <div class="plan-speed">30<small> Mbps</small></div>
+        <div class="plan-price">Ksh 5,999<small>/month</small></div>
+        <ul class="plan-features">
+          <li>30 Mbps dedicated</li>
+          <li>Unlimited data</li>
+          <li>SLA: 99% uptime</li>
+          <li>Static IP included</li>
+          <li>Business-hours support</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I'd like the SME Business Plan" class="btn-plan btn-plan-outline" target="_blank">Contact Sales</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Best Value</div>
+        <div class="plan-name">Business Pro</div>
+        <div class="plan-speed">100<small> Mbps</small></div>
+        <div class="plan-price">Ksh 12,000<small>/month</small></div>
+        <ul class="plan-features">
+          <li>100 Mbps dedicated</li>
+          <li>Unlimited data</li>
+          <li>SLA: 99.9% uptime</li>
+          <li>2× Static IPs</li>
+          <li>24/7 priority support</li>
+          <li>Network monitoring</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I'd like the Business Pro Plan" class="btn-plan btn-plan-white" target="_blank">Contact Sales</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-speed" style="font-size:28px;">Custom</div>
+        <div class="plan-price">Custom<small> quote</small></div>
+        <ul class="plan-features">
+          <li>Dedicated fiber link</li>
+          <li>Redundant connections</li>
+          <li>SLA: 99.99% uptime</li>
+          <li>Full network management</li>
+          <li>On-site engineer</li>
+          <li>MikroTik / Cisco ready</li>
+        </ul>
+        <a href="https://wa.me/254793908847?text=I need an Enterprise internet quote" class="btn-plan btn-plan-blue" target="_blank">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTSPOT -->
+  <section class="section">
+    <div class="section-head centered">
+      <div class="section-tag">Hotspot Business</div>
+      <h2 class="section-title">Start Your Own WiFi Hotspot</h2>
+      <p class="section-sub" style="margin:0 auto;">We set up everything — you collect revenue from your tenants, customers, or guests.</p>
+    </div>
+    <div class="services-grid" style="max-width:900px;margin:0 auto;">
+      <div class="svc-card">
+        <div class="svc-icon">🏨</div>
+        <div class="svc-name">Apartment / Estate</div>
+        <div class="svc-desc">MikroTik-based hotspot with voucher system. Residents pay per day or month. You earn the margin.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">☕</div>
+        <div class="svc-name">Café / Restaurant</div>
+        <div class="svc-desc">Captive portal WiFi with your branding. Customers log in, you control speed and session limits.</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏫</div>
+        <div class="svc-name">Schools &amp; Institutions</div>
+        <div class="svc-desc">Managed student WiFi with time controls, content filtering, and per-device bandwidth limits.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://wa.me/254793908847?text=I want to set up a WiFi hotspot business" target="_blank" class="wa-btn" style="font-size:15px;padding:16px 32px;">💬 Enquire About Hotspot Setup</a>
+    </div>
+  </section>
+
+  <div class="mpesa-banner">
+    <div>
+      <h3>💚 All Plans Payable via M-Pesa</h3>
+      <p>No bank transfers needed. Pay monthly from your phone. Easy and instant.</p>
+    </div>
+    <div class="mpesa-badge">📱 M-Pesa Ready</div>
+  </div>
+</div><!-- /pricing -->
+
+<!-- ══════════ ABOUT PAGE ══════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <p class="section-tag white" style="justify-content:center;display:flex;margin-bottom:12px;">Our Story</p>
+    <h1>Innovate · Secure · Transform</h1>
+    <p>Diadem Technologies Kenya is a homegrown connectivity company on a mission to bridge the digital divide — one household, one business, one community at a time.</p>
+  </div>
+
+  <section class="section">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="about-grid">
+      <div>
+        <div class="section-tag">Who We Are</div>
+        <h2 class="section-title">Kenya's Trusted Network Partner</h2>
+        <p style="color:var(--gray);font-size:15px;line-height:1.8;margin-bottom:16px;">Diadem Technologies Kenya was founded with a clear purpose: to make reliable internet accessible and affordable across Kenya — not just in the major cities, but in estates, towns, and communities that have been underserved.</p>
+        <p style="color:var(--gray);font-size:15px;line-height:1.8;margin-bottom:16px;">We are a team of certified network engineers, fiber technicians, and customer service professionals who understand the Kenyan market from the ground up.</p>
+        <p style="color:var(--gray);font-size:15px;line-height:1.8;">From WiFi hotspot deployment to enterprise fiber installations, we bring international-grade expertise with local roots and local pricing.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="h-stat" style="background:var(--sky);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:var(--blue-dark);">500<span style="color:var(--blue);">+</span></div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">Clients Connected</div>
+        </div>
+        <div class="h-stat" style="background:var(--sky);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:var(--blue-dark);">48<span style="color:var(--blue);">hr</span></div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">Install Turnaround</div>
+        </div>
+        <div class="h-stat" style="background:var(--sky);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:var(--blue-dark);">99<span style="color:var(--blue);">%</span></div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">Uptime SLA</div>
+        </div>
+        <div class="h-stat" style="background:var(--sky);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:36px;font-weight:800;color:var(--blue-dark);">24<span style="color:var(--blue);">/7</span></div>
+          <div style="font-size:12px;color:var(--gray);margin-top:6px;">Support Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="section-head centered">
+      <div class="section-tag">Our Values</div>
+      <h2 class="section-title">What Drives Us</h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card">
+        <div class="val-icon">💡</div>
+        <div class="val-title">Innovate</div>
+        <div class="val-desc">We stay ahead of technology — deploying modern fiber, MikroTik, and cloud tools to give you tomorrow's network today.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🔒</div>
+        <div class="val-title">Secure</div>
+        <div class="val-desc">Every network we build is hardened against threats. Your data, your business, and your privacy matter to us.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🔄</div>
+        <div class="val-title">Transform</div>
+        <div class="val-desc">We don't just connect — we transform how businesses operate, how families learn, and how communities grow.</div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon">🤝</div>
+        <div class="val-title">Integrity</div>
+        <div class="val-desc">Transparent pricing, honest advice, and no hidden charges. What we quote is what you pay — nothing more.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head centered">
+      <div class="section-tag">Our Expertise</div>
+      <h2 class="section-title">Technical Capabilities</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon">🔦</div><div class="svc-name">Fiber Optic Splicing</div><div class="svc-desc">Fusion splicing and OTDR testing for loss-free fiber networks.</div></div>
+      <div class="svc-card"><div class="svc-icon">📡</div><div class="svc-name">Wireless Networking</div><div class="svc-desc">Point-to-point and point-to-multipoint wireless links for last-mile delivery.</div></div>
+      <div class="svc-card"><div class="svc-icon">⚙️</div><div class="svc-name">MikroTik Configuration</div><div class="svc-desc">RouterOS setup, hotspot management, and bandwidth control.</div></div>
+      <div class="svc-card"><div class="svc-icon">🏗️</div><div class="svc-name">Structured Cabling</div><div class="svc-desc">Cat6/Cat6A LAN cabling for offices, schools, and multi-floor buildings.</div></div>
+    </div>
+  </section>
+</div><!-- /about -->
+
+<!-- ══════════ CONTACT PAGE ══════════ -->
+<div id="page-contact" class="page">
+  <section style="background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:60px 5%;text-align:center;">
+    <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;color:white;margin-bottom:12px;letter-spacing:-0.02em;">Get In Touch</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:15px;max-width:480px;margin:0 auto;">Ready to connect? Have questions? Our team responds fast — call, WhatsApp, or fill out the form below.</p>
+  </section>
+
+  <div class="contact-page">
+    <div class="contact-info">
+      <h2>Contact Diadem Technologies Kenya</h2>
+      <p>We're a call or message away. Whether you need a quote, have a support issue, or want to discuss a project — reach out anytime.</p>
+
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-label">Phone / WhatsApp</div>
+          <div class="ci-val"><a href="tel:0793908847" style="color:var(--text);text-decoration:none;">0793 908 847</a></div>
+          <div class="ci-sub">Call or WhatsApp — we respond within minutes</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-label">Service Area</div>
+          <div class="ci-val">Juja · Kenyatta Road · Thika · Nyeri</div>
+          <div class="ci-sub">Central Kenya &amp; surrounding areas</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon">🕐</div>
+        <div>
+          <div class="ci-label">Working Hours</div>
+          <div class="ci-val">Mon – Sat: 7:00 AM – 8:00 PM</div>
+          <div class="ci-sub">Emergency support available 24/7 via WhatsApp</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon">✉️</div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val">info@diademtech.co.ke</div>
+          <div class="ci-sub">We reply within 24 hours</div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/254793908847?text=Hello Diadem Technologies, I'd like to enquire about your services." target="_blank" class="wa-btn">
+        💬 Chat on WhatsApp — 0793 908 847
+      </a>
+    </div>
+
+    <div class="contact-form">
+      <h3>📋 Request a Quote or Installation</h3>
+      <div id="formSuccess" class="form-success">
+        <span class="check">✅</span>
+        Request sent! We'll contact you on WhatsApp shortly.
+      </div>
+      <div id="contactForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="fname" placeholder="e.g. John Kamau"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="fphone" placeholder="e.g. 0712 345 678"/>
+        </div>
+        <div class="form-group">
+          <label>Location / Area</label>
+          <input type="text" id="floc" placeholder="e.g. Ruiru, Kiambu"/>
+        </div>
+        <div class="form-group">
+          <label>Service Interested In</label>
+          <select id="fservice">
+            <option value="">Select a service...</option>
+            <option>Home Internet</option>
+            <option>Business Internet</option>
+            <option>WiFi Hotspot Setup</option>
+            <option>Network Installation / Cabling</option>
+            <option>Network Security</option>
+            <option>Technical Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (optional)</label>
+          <textarea id="fmsg" placeholder="Tell us more about what you need..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">Send Request via WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVERAGE MAP PLACEHOLDER -->
+  <div class="coverage-section">
+    <div class="section-head centered">
+      <div class="section-tag">Coverage</div>
+      <h2 class="section-title">Our Service Areas</h2>
+      <p class="section-sub" style="margin:0 auto;">We currently serve Juja, Kenyatta Road, Thika, Nyeri and surrounding areas. Coverage expanding continuously.</p>
+    </div>
+    <div class="map-placeholder">
+      <div style="font-size:48px;margin-bottom:10px;">🗺️</div>
+      <p>Coverage map — contact us on <strong>0793 908 847</strong> to confirm service availability in your area.</p>
+    </div>
+  </div>
+</div><!-- /contact -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>DIADEM TECHNOLOGIES KENYA</strong>
+      <p style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;">Innovate · Secure · Transform</p>
+      <p>Fast, reliable connectivity for homes, businesses, and communities across Kenya.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a onclick="showPage('pricing',null)">Home Internet</a>
+      <a onclick="showPage('pricing',null)">Business Internet</a>
+      <a onclick="showPage('pricing',null)">WiFi Hotspot</a>
+      <a onclick="showPage('pricing',null)">Network Setup</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a onclick="showPage('home',null)">Home</a>
+      <a onclick="showPage('about',null)">About Us</a>
+      <a onclick="showPage('pricing',null)">Pricing</a>
+      <a onclick="showPage('contact',null)">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:0793908847">📞 0793 908 847</a>
+      <a href="https://wa.me/254793908847" target="_blank">💬 WhatsApp</a>
+      <a href="mailto:info@diademtech.co.ke">✉️ info@diademtech.co.ke</a>
+      <a>📍 Nairobi, Kenya</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Diadem Technologies Kenya. All rights reserved.</p>
+    <p class="tagline-small">Innovate · Secure · Transform</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/254793908847?text=Hello Diadem Technologies! I'd like to know more about your services." class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+function showPage(id, linkEl) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  if (linkEl) linkEl.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function submitForm() {
+  const name    = document.getElementById('fname').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const loc     = document.getElementById('floc').value.trim();
+  const service = document.getElementById('fservice').value;
+  const msg     = document.getElementById('fmsg').value.trim();
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number.');
+    return;
+  }
+
+  const text = `Hello Diadem Technologies Kenya! 👋\n\nNew enquiry:\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${loc || 'Not specified'}\n*Service:* ${service || 'Not specified'}\n*Message:* ${msg || 'None'}\n\nPlease get back to me. Thank you!`;
+  const url = 'https://wa.me/254793908847?text=' + encodeURIComponent(text);
+  window.open(url, '_blank');
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Close mobile menu on outside click
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobileMenu');
+  if (!e.target.closest('nav') && !e.target.closest('#mobileMenu')) {
+    menu.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>
